@@ -9,7 +9,7 @@ public class framePrograma extends javax.swing.JFrame {
     public framePrograma() {
         initComponents();
         
-        String columnas[ ] = {"Código", "Nombre"};
+        String columnas[ ] = {"Código", "Nombre", "Cantidad"};
         modelo.setColumnIdentifiers(columnas);
         jTabla1.setModel(modelo);
     }
@@ -32,12 +32,20 @@ public class framePrograma extends javax.swing.JFrame {
         txtCrearNombre2 = new javax.swing.JLabel();
         inputInsertarCantidad = new javax.swing.JTextField();
         btnInsertarProducto = new javax.swing.JButton();
-        bgEliminar = new javax.swing.JPanel();
         bgTabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTabla1 = new javax.swing.JTable();
-        btnEliminar = new javax.swing.JButton();
-        btnActualizar = new javax.swing.JButton();
+        btnEliminarProducto = new javax.swing.JButton();
+        bgActualizar = new javax.swing.JPanel();
+        txt4 = new javax.swing.JLabel();
+        txtCrearNombre3 = new javax.swing.JLabel();
+        inputActualizarCodigo = new javax.swing.JTextField();
+        txtCrearNombre4 = new javax.swing.JLabel();
+        inputActualizarNombre = new javax.swing.JTextField();
+        inputActualizarCantidad = new javax.swing.JTextField();
+        txtCrearNombre5 = new javax.swing.JLabel();
+        btnTomarValores = new javax.swing.JButton();
+        btnActualizarValores = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,7 +54,7 @@ public class framePrograma extends javax.swing.JFrame {
 
         inputCrearNombre1.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
 
-        btnCrearProducto.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
+        btnCrearProducto.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
         btnCrearProducto.setText("Crear producto");
         btnCrearProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,7 +64,7 @@ public class framePrograma extends javax.swing.JFrame {
 
         txt1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt1.setText("Añada 1 producto a la lista de productos disponibles");
+        txt1.setText("Añada productos a la lista de productos disponibles");
 
         javax.swing.GroupLayout bgCrearLayout = new javax.swing.GroupLayout(bgCrear);
         bgCrear.setLayout(bgCrearLayout);
@@ -66,14 +74,14 @@ public class framePrograma extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(txt1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(bgCrearLayout.createSequentialGroup()
-                .addGap(115, 115, 115)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgCrearLayout.createSequentialGroup()
+                .addContainerGap(116, Short.MAX_VALUE)
                 .addComponent(txtCrearNombre)
                 .addGap(18, 18, 18)
                 .addGroup(bgCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCrearProducto)
                     .addComponent(inputCrearNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addGap(106, 106, 106))
         );
         bgCrearLayout.setVerticalGroup(
             bgCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,14 +94,14 @@ public class framePrograma extends javax.swing.JFrame {
                     .addComponent(inputCrearNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCrearProducto)
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
 
         tabbed1.addTab("Crear Producto", bgCrear);
 
         txt2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt2.setText("Añada productos ya existentes al inventario");
+        txt2.setText("Añada productos ya creados al inventario");
 
         jCombo.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
 
@@ -105,7 +113,7 @@ public class framePrograma extends javax.swing.JFrame {
 
         inputInsertarCantidad.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
 
-        btnInsertarProducto.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
+        btnInsertarProducto.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
         btnInsertarProducto.setText("Inserar Producto");
         btnInsertarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +130,7 @@ public class framePrograma extends javax.swing.JFrame {
                 .addComponent(txt2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgInserarLayout.createSequentialGroup()
-                .addContainerGap(150, Short.MAX_VALUE)
+                .addContainerGap(144, Short.MAX_VALUE)
                 .addGroup(bgInserarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, bgInserarLayout.createSequentialGroup()
                         .addComponent(txtCrearNombre1)
@@ -134,7 +142,7 @@ public class framePrograma extends javax.swing.JFrame {
                         .addGroup(bgInserarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnInsertarProducto)
                             .addComponent(inputInsertarCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(149, 149, 149))
+                .addGap(138, 138, 138))
         );
         bgInserarLayout.setVerticalGroup(
             bgInserarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,24 +159,12 @@ public class framePrograma extends javax.swing.JFrame {
                     .addComponent(inputInsertarCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnInsertarProducto)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         tabbed1.addTab("Insertar Producto al Inventario", bgInserar);
 
-        javax.swing.GroupLayout bgEliminarLayout = new javax.swing.GroupLayout(bgEliminar);
-        bgEliminar.setLayout(bgEliminarLayout);
-        bgEliminarLayout.setHorizontalGroup(
-            bgEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 611, Short.MAX_VALUE)
-        );
-        bgEliminarLayout.setVerticalGroup(
-            bgEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 267, Short.MAX_VALUE)
-        );
-
-        tabbed1.addTab("Eliminar Producto del Inventario", bgEliminar);
-
+        jTabla1.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         jTabla1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -182,14 +178,11 @@ public class framePrograma extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTabla1);
 
-        btnEliminar.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        btnEliminar.setText("Eliminar");
-
-        btnActualizar.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
-        btnActualizar.setText("Actualizar");
-        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarProducto.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
+        btnEliminarProducto.setText("Eliminar Producto");
+        btnEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActualizar(evt);
+                btnEliminarProducto(evt);
             }
         });
 
@@ -200,11 +193,9 @@ public class framePrograma extends javax.swing.JFrame {
             .addGroup(bgTablaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(bgTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
                     .addGroup(bgTablaLayout.createSequentialGroup()
-                        .addComponent(btnEliminar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnActualizar)
+                        .addComponent(btnEliminarProducto)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -212,15 +203,104 @@ public class framePrograma extends javax.swing.JFrame {
             bgTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgTablaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(bgTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnActualizar)
-                    .addComponent(btnEliminar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEliminarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(14, 14, 14))
         );
 
         tabbed1.addTab("Inventario", bgTabla);
+
+        txt4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txt4.setText("Actualice productos del inventario");
+
+        txtCrearNombre3.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
+        txtCrearNombre3.setText("Código");
+
+        inputActualizarCodigo.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
+
+        txtCrearNombre4.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
+        txtCrearNombre4.setText("Nombre");
+
+        inputActualizarNombre.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
+
+        inputActualizarCantidad.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
+
+        txtCrearNombre5.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
+        txtCrearNombre5.setText("Cantidad");
+
+        btnTomarValores.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
+        btnTomarValores.setText("Tomar Valores");
+        btnTomarValores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTomarValores(evt);
+            }
+        });
+
+        btnActualizarValores.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
+        btnActualizarValores.setText("Actualizar Valores");
+        btnActualizarValores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarValores(evt);
+            }
+        });
+
+        javax.swing.GroupLayout bgActualizarLayout = new javax.swing.GroupLayout(bgActualizar);
+        bgActualizar.setLayout(bgActualizarLayout);
+        bgActualizarLayout.setHorizontalGroup(
+            bgActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgActualizarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txt4, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(bgActualizarLayout.createSequentialGroup()
+                .addGap(112, 112, 112)
+                .addGroup(bgActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(bgActualizarLayout.createSequentialGroup()
+                        .addComponent(btnTomarValores)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnActualizarValores))
+                    .addGroup(bgActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(bgActualizarLayout.createSequentialGroup()
+                            .addComponent(txtCrearNombre5)
+                            .addGap(18, 18, 18)
+                            .addComponent(inputActualizarCantidad))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgActualizarLayout.createSequentialGroup()
+                            .addComponent(txtCrearNombre4)
+                            .addGap(18, 18, 18)
+                            .addComponent(inputActualizarNombre))
+                        .addGroup(bgActualizarLayout.createSequentialGroup()
+                            .addComponent(txtCrearNombre3)
+                            .addGap(18, 18, 18)
+                            .addComponent(inputActualizarCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        bgActualizarLayout.setVerticalGroup(
+            bgActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgActualizarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txt4)
+                .addGap(18, 18, 18)
+                .addGroup(bgActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCrearNombre3)
+                    .addComponent(inputActualizarCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(bgActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCrearNombre4)
+                    .addComponent(inputActualizarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(bgActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCrearNombre5)
+                    .addComponent(inputActualizarCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(bgActualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnTomarValores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnActualizarValores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(94, 94, 94))
+        );
+
+        tabbed1.addTab("Actualizar Producto del Inventario", bgActualizar);
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -237,7 +317,9 @@ public class framePrograma extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,13 +333,21 @@ public class framePrograma extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnCrearProducto
 
-    private void btnActualizar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizar
-
-    }//GEN-LAST:event_btnActualizar
-
     private void btnInsertarProducto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarProducto
         // TODO add your handling code here:
     }//GEN-LAST:event_btnInsertarProducto
+
+    private void btnEliminarProducto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProducto
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarProducto
+
+    private void btnTomarValores(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTomarValores
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTomarValores
+
+    private void btnActualizarValores(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarValores
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnActualizarValores
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -269,14 +359,18 @@ public class framePrograma extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
+    private javax.swing.JPanel bgActualizar;
     private javax.swing.JPanel bgCrear;
-    private javax.swing.JPanel bgEliminar;
     private javax.swing.JPanel bgInserar;
     private javax.swing.JPanel bgTabla;
-    private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnActualizarValores;
     private javax.swing.JButton btnCrearProducto;
-    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEliminarProducto;
     private javax.swing.JButton btnInsertarProducto;
+    private javax.swing.JButton btnTomarValores;
+    private javax.swing.JTextField inputActualizarCantidad;
+    private javax.swing.JTextField inputActualizarCodigo;
+    private javax.swing.JTextField inputActualizarNombre;
     private javax.swing.JTextField inputCrearNombre1;
     private javax.swing.JTextField inputInsertarCantidad;
     private javax.swing.JComboBox<String> jCombo;
@@ -285,8 +379,12 @@ public class framePrograma extends javax.swing.JFrame {
     private javax.swing.JTabbedPane tabbed1;
     private javax.swing.JLabel txt1;
     private javax.swing.JLabel txt2;
+    private javax.swing.JLabel txt4;
     private javax.swing.JLabel txtCrearNombre;
     private javax.swing.JLabel txtCrearNombre1;
     private javax.swing.JLabel txtCrearNombre2;
+    private javax.swing.JLabel txtCrearNombre3;
+    private javax.swing.JLabel txtCrearNombre4;
+    private javax.swing.JLabel txtCrearNombre5;
     // End of variables declaration//GEN-END:variables
 }
