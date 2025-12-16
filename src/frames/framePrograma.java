@@ -104,6 +104,7 @@ public class framePrograma extends javax.swing.JFrame {
         txt2.setText("Añada productos ya creados al inventario");
 
         jCombo.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
+        jCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
 
         txtCrearNombre1.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         txtCrearNombre1.setText("Producto");
@@ -213,7 +214,7 @@ public class framePrograma extends javax.swing.JFrame {
 
         txt4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt4.setText("Actualice productos del inventario");
+        txt4.setText("Actualice productos existentes en el inventario");
 
         txtCrearNombre3.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         txtCrearNombre3.setText("Código");

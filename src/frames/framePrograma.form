@@ -215,7 +215,9 @@
                       <Font name="Gadugi" size="18" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
+                      <StringArray count="1">
+                        <StringItem index="0" value="Seleccionar"/>
+                      </StringArray>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -444,7 +446,7 @@
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Actualice productos del inventario"/>
+                    <Property name="text" type="java.lang.String" value="Actualice productos existentes en el inventario"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtCrearNombre3">
