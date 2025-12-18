@@ -9,7 +9,7 @@ public class framePrograma extends javax.swing.JFrame {
     public framePrograma() {
         initComponents();
         
-        String columnas[ ] = {"Código", "Nombre", "Cantidad"};
+        String columnas[ ] = {"Código", "Nombre", "Cantidad disponible"};
         modelo.setColumnIdentifiers(columnas);
         jTabla1.setModel(modelo);
     }
