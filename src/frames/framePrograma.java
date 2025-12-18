@@ -1,5 +1,6 @@
 package frames;
 
+import clases.creacionProducto;
 import javax.swing.table.DefaultTableModel;
 
 public class framePrograma extends javax.swing.JFrame {
@@ -22,7 +23,7 @@ public class framePrograma extends javax.swing.JFrame {
         tabbed1 = new javax.swing.JTabbedPane();
         bgCrear = new javax.swing.JPanel();
         txtCrearNombre = new javax.swing.JLabel();
-        inputCrearNombre1 = new javax.swing.JTextField();
+        inputCrearNombre = new javax.swing.JTextField();
         btnCrearProducto = new javax.swing.JButton();
         txt1 = new javax.swing.JLabel();
         bgInserar = new javax.swing.JPanel();
@@ -52,7 +53,12 @@ public class framePrograma extends javax.swing.JFrame {
         txtCrearNombre.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         txtCrearNombre.setText("Nombre");
 
-        inputCrearNombre1.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
+        inputCrearNombre.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
+        inputCrearNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputCrearNombreActionPerformed(evt);
+            }
+        });
 
         btnCrearProducto.setFont(new java.awt.Font("Gadugi", 0, 14)); // NOI18N
         btnCrearProducto.setText("Crear producto");
@@ -80,7 +86,7 @@ public class framePrograma extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(bgCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCrearProducto)
-                    .addComponent(inputCrearNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputCrearNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(106, 106, 106))
         );
         bgCrearLayout.setVerticalGroup(
@@ -91,7 +97,7 @@ public class framePrograma extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(bgCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCrearNombre)
-                    .addComponent(inputCrearNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputCrearNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCrearProducto)
                 .addContainerGap(153, Short.MAX_VALUE))
@@ -330,8 +336,15 @@ public class framePrograma extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //variable para que se inicialice en 0 para luego sumarle de 1 en 1 conforme a cuantos productos se creen
+    int codigo = 0;
+    
     private void btnCrearProducto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearProducto
 
+        String nombre = inputCrearNombre.getText();
+        
+        creacionProducto claseCrear = new creacionProducto(nombre);
+        
     }//GEN-LAST:event_btnCrearProducto
 
     private void btnInsertarProducto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarProducto
@@ -349,6 +362,10 @@ public class framePrograma extends javax.swing.JFrame {
     private void btnActualizarValores(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarValores
         // TODO add your handling code here:
     }//GEN-LAST:event_btnActualizarValores
+
+    private void inputCrearNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCrearNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputCrearNombreActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -372,7 +389,7 @@ public class framePrograma extends javax.swing.JFrame {
     private javax.swing.JTextField inputActualizarCantidad;
     private javax.swing.JTextField inputActualizarCodigo;
     private javax.swing.JTextField inputActualizarNombre;
-    private javax.swing.JTextField inputCrearNombre1;
+    private javax.swing.JTextField inputCrearNombre;
     private javax.swing.JTextField inputInsertarCantidad;
     private javax.swing.JComboBox<String> jCombo;
     private javax.swing.JScrollPane jScrollPane1;
