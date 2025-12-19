@@ -1,6 +1,7 @@
 package frames;
 
 import clases.creacionProducto;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class framePrograma extends javax.swing.JFrame {
@@ -340,10 +341,32 @@ public class framePrograma extends javax.swing.JFrame {
     int codigo = 0;
     
     private void btnCrearProducto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearProducto
-
-        String nombre = inputCrearNombre.getText();
         
-        creacionProducto claseCrear = new creacionProducto(nombre);
+        
+        /*Aqui se hace la confirmación de que haya algo en el input para poder crear el objeto (if)*/
+        
+        //el orden importa, ya que cada uno devuelve un valor diferente, de boolean a String no tiene sentido
+        //locura,  .trim quita espacios(devuelve String),   .isEmpty verifica si esta vacío el textfield(devuelve booleano)
+        if(inputCrearNombre.getText().trim().isEmpty()){
+            
+            JOptionPane.showMessageDialog(rootPane, "No se ha ingresado nada como nombre");        
+            
+        }else{
+            
+            /*Aqui se coloca el nombre del producto (anteriormente mandado a la clase) en el comboBox*/
+            //se toma nombre del input
+            String nombre = inputCrearNombre.getText();
+            //se envía a la clase
+            creacionProducto claseCrear = new creacionProducto(nombre);
+           //se toma de la clase el nombre del producto Y  se añade a el comboBox
+            jCombo.addItem(claseCrear.getNombre());
+            //se deja en blanco en input
+            inputCrearNombre.setText("");
+            //se envía mensaje de confirmacion, al crear el producto
+            JOptionPane.showMessageDialog(rootPane, "Objeto creado satisfactoriamente");
+
+
+        }
         
     }//GEN-LAST:event_btnCrearProducto
 
